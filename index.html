@@ -3,302 +3,176 @@
 <html lang="hi">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pramod Electronics | Gift Offer</title>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pramod Electronics | Customer Gift</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
+*{box-sizing:border-box}
 body{
- font-family:Arial,sans-serif;
- background:#f5f7fc;
- color:#102b59;
+ margin:0;font-family:Arial,sans-serif;
+ background:#f2f5fb;color:#123;
 }
-.header{
+header{
  background:linear-gradient(120deg,#041f52,#075bdc);
- color:white;text-align:center;padding:20px 10px;
+ color:white;text-align:center;padding:22px 10px;
 }
-.logo{font-size:27px;font-weight:900;color:#ffd15a}
-.header p{font-size:12px;margin-top:7px}
-.page{display:none;max-width:650px;margin:auto;padding:15px}
-.page.active{display:block}
+header h2{color:#ffd15a;margin:0}
+header p{font-size:12px}
+main{max-width:600px;margin:auto;padding:15px}
 .card{
- background:white;border-radius:17px;padding:16px;
- box-shadow:0 4px 15px #001b4415;margin-bottom:15px;
+ background:white;padding:18px;border-radius:17px;
+ box-shadow:0 4px 15px #0001;margin-bottom:15px;
 }
-h2{text-align:center;margin:15px 0;color:#0b367c}
-.video-box{background:#071a38;padding:7px;border-radius:15px}
-video{width:100%;border-radius:10px;background:#000}
-.note{text-align:center;color:#666;font-size:14px;line-height:1.6;margin:15px 0}
-button{
- border:0;border-radius:10px;padding:13px 18px;
- background:#0757d6;color:white;font-size:15px;font-weight:bold;
- cursor:pointer;
+video{
+ width:100%;background:#000;border-radius:12px;
 }
-button:disabled{opacity:.5}
-.gold{background:#e9a900;color:#172b4d}
-.btnrow{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
-.gift{font-size:65px;text-align:center;margin:10px}
-.heading{
- color:#b47a00;text-align:center;font-size:27px;
- font-weight:900;margin:12px 0;
-}
+h2{text-align:center}
+.note{text-align:center;color:#666;line-height:1.7}
+#giftPage{display:none}
+.gift{font-size:65px;text-align:center}
 .message{
  background:linear-gradient(120deg,#05265f,#0757d6);
- color:white;text-align:center;padding:23px 15px;
- border-radius:18px;font-size:21px;font-weight:bold;line-height:1.6;
+ color:white;text-align:center;padding:24px;
+ border-radius:16px;line-height:1.7;font-size:19px;
 }
-.message span{color:#ffd45c}
-.sub{text-align:center;color:#555;line-height:1.7;margin:17px 5px}
-.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.codebox{
+ background:#fff4d8;border:2px dashed #d99b00;
+ padding:20px;border-radius:14px;text-align:center;
+ margin:20px 0;
+}
+.code{
+ font-size:27px;font-weight:bold;color:#0757d6;
+ letter-spacing:2px;overflow-wrap:anywhere;
+}
+button{
+ background:#0757d6;color:white;border:0;
+ padding:13px 20px;border-radius:10px;
+ font-weight:bold;margin:5px;
+}
+.grid{
+ display:grid;grid-template-columns:repeat(2,1fr);
+ gap:10px;margin-top:15px;
+}
 .item{
- background:white;border:1px solid #e3e9f3;
- border-radius:14px;overflow:hidden;text-align:center;
- box-shadow:0 3px 12px #0001;
+ background:#edf3ff;padding:17px 5px;
+ border-radius:12px;text-align:center;font-weight:bold;
 }
-.picture{
- height:115px;display:flex;align-items:center;justify-content:center;
- font-size:57px;background:linear-gradient(135deg,#edf4ff,#fff4dc);
-}
-.item strong{
- display:block;background:#0757d6;color:white;padding:12px;font-size:15px;
-}
-.more{text-align:center;font-size:21px;font-weight:bold;margin:25px 0}
-.visit{
- background:linear-gradient(120deg,#05265f,#0757d6);
- color:white;text-align:center;padding:23px 12px;border-radius:18px;
-}
-.visit h2{color:#ffd45c}
-.visit p{line-height:1.8}
-.owner-title{
- background:#092b65;color:white;padding:14px;border-radius:12px;
- text-align:center;margin:20px 0 12px;
-}
-input[type=file],input[type=text]{
- width:100%;padding:12px;border:1px solid #ccd5e5;
- border-radius:9px;margin:10px 0;background:white;
-}
-#qrcode{
- display:flex;justify-content:center;align-items:center;
- margin:15px auto;padding:12px;background:white;width:max-content;
-}
-.small{font-size:12px;color:#777;line-height:1.6}
-.footer{text-align:center;color:#777;font-size:12px;padding:18px}
+.item span{display:block;font-size:37px;margin-bottom:7px}
+.footer{text-align:center;color:#777;padding:20px;font-size:12px}
 </style>
 </head>
-
 <body>
 
-<header class="header">
- <div class="logo">PE | PRAMOD ELECTRONICS</div>
- <p>TRUSTED QUALITY • HONEST SERVICE • SINCE 1980</p>
+<header>
+<h2>PE | PRAMOD ELECTRONICS</h2>
+<p>TRUSTED QUALITY • HONEST SERVICE • SINCE 1980</p>
 </header>
 
-<!-- CUSTOMER VIDEO PAGE -->
-<section id="videoPage" class="page active">
- <div class="card">
-  <h2>🎁 आपके लिए एक खास ऑफर!</h2>
-  <div class="video-box">
-   <video id="offerVideo" controls playsinline>
-    आपका ब्राउज़र वीडियो नहीं चला सकता।
-   </video>
-  </div>
-  <p class="note">
-   Pramod Electronics की ओर से आपके लिए एक खास संदेश।
-   पूरा वीडियो देखने के बाद आपके लिए ऑफर खुलेगा।
-  </p>
-  <div class="btnrow">
-   <button onclick="showOffer()">आगे बढ़ें →</button>
-  </div>
- </div>
+<main>
+
+<!-- CUSTOMER VIDEO -->
+<section class="card" id="videoPage">
+<h2>🎬 आपके लिए खास वीडियो!</h2>
+<video id="offerVideo" controls playsinline></video>
+<p class="note">
+Pramod Electronics की ओर से आपके लिए एक खास संदेश।
+पूरा वीडियो देखने के बाद आपका Gift Code खुलेगा।
+</p>
+<p class="note" id="status">वीडियो लोड हो रहा है...</p>
 </section>
 
-<!-- CUSTOMER OFFER PAGE -->
-<section id="offerPage" class="page">
+<!-- GIFT CODE PAGE -->
+<section class="card" id="giftPage">
+<div class="gift">🎁</div>
+<h2>बधाई हो! आपका Gift तैयार है!</h2>
 
- <div class="gift">🎁</div>
- <div class="heading">आपके लिए एक खास उपहार!</div>
-
- <div class="message">
-  अब आप दुकान पर <span>विजिट</span> करने के बाद ही
-  जान पाएंगे कि आपके लिए कौन-सा शानदार
-  <span>डिस्काउंट और खास ऑफर</span> मिलेगा!
- </div>
-
- <p class="sub">
-  Pramod Electronics में आपका स्वागत है।
-  हमारे शोरूम पर आइए और अपने लिए बेहतरीन ऑफर पाइए।
- </p>
-
- <h2>हमारे यहाँ उपलब्ध सामान</h2>
-
- <div class="grid">
-  <div class="item"><div class="picture">🛏️</div><strong>बेड / पलंग</strong></div>
-  <div class="item"><div class="picture">🛋️</div><strong>सोफा सेट</strong></div>
-  <div class="item"><div class="picture">🚪</div><strong>अलमारी</strong></div>
-  <div class="item"><div class="picture">🪑</div><strong>डाइनिंग सेट</strong></div>
-  <div class="item"><div class="picture">📺</div><strong>LED टीवी</strong></div>
-  <div class="item"><div class="picture">🧊</div><strong>फ्रिज</strong></div>
-  <div class="item"><div class="picture">🧺</div><strong>वॉशिंग मशीन</strong></div>
-  <div class="item"><div class="picture">❄️</div><strong>कूलर और AC</strong></div>
- </div>
-
- <div class="more">और भी बहुत कुछ...</div>
-
- <div class="visit">
-  <h2>🎁 Visit Our Store</h2>
-  <h3>PRAMOD ELECTRONICS</h3>
-  <p>
-   Chandrapur • Indira Nagar • Mul Road<br>
-   बड़ा सामान • बेहतर डील<br>
-   केवल आपके लिए!
-  </p>
- </div>
-</section>
-
-<!-- OWNER PANEL -->
-<section class="page active" id="ownerPanel">
-
- <div class="owner-title">
-  <h2 style="color:white;margin:0">OWNER DASHBOARD</h2>
-  <p style="font-size:13px;margin-top:6px">आपकी वीडियो और QR सेटिंग</p>
- </div>
-
- <div class="card">
-  <h3>1. अपना वीडियो अपलोड करें</h3>
-  <input type="file" id="videoFile" accept="video/*">
-  <div class="btnrow">
-   <button onclick="previewVideo()">वीडियो Preview करें</button>
-   <button class="gold" onclick="playCustomerVideo()">ग्राहक पेज देखें</button>
-  </div>
-  <p class="small">
-   अभी वीडियो केवल इसी डिवाइस पर Preview होगा।
-   Firebase जुड़ने के बाद आपका वीडियो ऑनलाइन सेव होगा
-   और सभी ग्राहकों को दिखाई देगा।
-  </p>
- </div>
-
- <div class="card">
-  <h3>2. QR Code Generator</h3>
-  <p class="note">
-   वेबसाइट ऑनलाइन प्रकाशित होने के बाद उसका लिंक यहाँ डालें।
-  </p>
-  <input type="text" id="pageUrl" placeholder="अपनी ऑनलाइन वेबसाइट का लिंक डालें">
-  <div class="btnrow">
-   <button onclick="makeQR()">QR Code बनाएं</button>
-   <button class="gold" onclick="downloadQR()">QR डाउनलोड करें</button>
-  </div>
-  <div id="qrcode"></div>
-  <p class="small">
-   QR कोड वेबसाइट का लिंक खोलेगा। ऑनलाइन वीडियो सभी ग्राहकों
-   को दिखाने के लिए Firebase Storage कनेक्शन जरूरी होगा।
-  </p>
- </div>
-
-</section>
-
-<div class="footer">
- Pramod Electronics • Chandrapur
+<div class="message">
+आपके लिए एक खास उपहार है!<br>
+दुकान पर आइए और अपना विशेष ऑफर पाइए।
 </div>
 
+<div class="codebox">
+<p>आपका UNIQUE GIFT CODE</p>
+<div class="code" id="giftCode">बन रहा है...</div>
+<p>दुकान पर यह कोड दिखाएँ।</p>
+<button onclick="copyCode()">कोड कॉपी करें</button>
+</div>
+
+<h2>हमारे यहाँ उपलब्ध सामान</h2>
+
+<div class="grid">
+<div class="item"><span>🛏️</span>बेड / पलंग</div>
+<div class="item"><span>🛋️</span>सोफा सेट</div>
+<div class="item"><span>🚪</span>अलमारी</div>
+<div class="item"><span>🪑</span>डाइनिंग सेट</div>
+<div class="item"><span>📺</span>LED टीवी</div>
+<div class="item"><span>🧊</span>फ्रिज</div>
+<div class="item"><span>🧺</span>वॉशिंग मशीन</div>
+<div class="item"><span>❄️</span>कूलर और AC</div>
+</div>
+
+<div class="message" style="margin-top:20px">
+PRAMOD ELECTRONICS<br>
+Chandrapur • Indira Nagar • Mul Road
+</div>
+</section>
+
+</main>
+
+<div class="footer">Pramod Electronics • Special Gift Offer</div>
+
 <script>
-const video = document.getElementById("offerVideo");
-let selectedVideoURL = null;
-let qrReady = false;
+const params=new URLSearchParams(location.search);
+const videoUrl=params.get("video");
+const video=document.getElementById("offerVideo");
+const statusText=document.getElementById("status");
 
-function showPage(id){
- document.querySelectorAll(".page").forEach(p=>p.classList.remove("active"));
- document.getElementById(id).classList.add("active");
- window.scrollTo(0,0);
+let giftCreated=false;
+
+function makeTemporaryCode(){
+const chars="ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
+let code="PE-";
+for(let i=0;i<5;i++){
+code+=chars[Math.floor(Math.random()*chars.length)];
+}
+return code;
 }
 
-function showOffer(){
- video.pause();
- showPage("offerPage");
+function showGift(){
+if(giftCreated)return;
+giftCreated=true;
+
+document.getElementById("videoPage").style.display="none";
+document.getElementById("giftPage").style.display="block";
+document.getElementById("giftCode").textContent=makeTemporaryCode();
+
+window.scrollTo(0,0);
 }
 
-video.addEventListener("ended",showOffer);
-
-function previewVideo(){
- const file=document.getElementById("videoFile").files[0];
-
- if(!file){
-  alert("पहले अपनी गैलरी से वीडियो चुनें।");
-  return;
- }
-
- if(selectedVideoURL) URL.revokeObjectURL(selectedVideoURL);
- selectedVideoURL=URL.createObjectURL(file);
-
- video.src=selectedVideoURL;
- video.load();
- alert("आपका वीडियो Preview के लिए तैयार है।");
+if(videoUrl){
+try{
+const url=new URL(videoUrl);
+if(!["https:","http:"].includes(url.protocol))throw new Error();
+video.src=url.href;
+statusText.textContent="वीडियो तैयार है। Play दबाकर देखें।";
+}catch(e){
+statusText.textContent="वीडियो लिंक सही नहीं है।";
+}
+}else{
+statusText.textContent="वीडियो लिंक उपलब्ध नहीं है।";
 }
 
-function playCustomerVideo(){
- if(!selectedVideoURL){
-  alert("पहले अपना वीडियो चुनें और Preview करें।");
-  return;
- }
- showPage("videoPage");
- video.currentTime=0;
- video.play().catch(()=>{});
+video.addEventListener("ended",showGift);
+
+function copyCode(){
+const code=document.getElementById("giftCode").textContent;
+if(navigator.clipboard && window.isSecureContext){
+navigator.clipboard.writeText(code)
+.then(()=>alert("Gift Code कॉपी हो गया!"))
+.catch(()=>alert("कोड: "+code));
+}else{
+alert("आपका Gift Code: "+code);
 }
-
-function makeQR(){
- const url=document.getElementById("pageUrl").value.trim();
- const area=document.getElementById("qrcode");
-
- if(!url){
-  alert("पहले अपनी ऑनलाइन वेबसाइट का लिंक डालें।");
-  return;
- }
-
- if(!/^https?:\/\//i.test(url)){
-  alert("लिंक https:// से शुरू होना चाहिए।");
-  return;
- }
-
- if(typeof QRCode==="undefined"){
-  alert("QR बनाने की लाइब्रेरी लोड नहीं हुई। इंटरनेट चालू करें।");
-  return;
- }
-
- area.innerHTML="";
- new QRCode(area,{
-  text:url,
-  width:220,
-  height:220,
-  correctLevel:QRCode.CorrectLevel.H
- });
- qrReady=true;
-}
-
-function downloadQR(){
- if(!qrReady){
-  alert("पहले QR Code बनाएं।");
-  return;
- }
-
- const area=document.getElementById("qrcode");
- const canvas=area.querySelector("canvas");
- const img=area.querySelector("img");
- let link=document.createElement("a");
-
- if(canvas){
-  link.href=canvas.toDataURL("image/png");
- }else if(img && img.src){
-  link.href=img.src;
- }else{
-  alert("QR अभी तैयार नहीं हुआ।");
-  return;
- }
-
- link.download="Pramod-Electronics-Gift-QR.png";
- link.click();
 }
 </script>
-
 </body>
 </html>
