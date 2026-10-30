@@ -44,115 +44,115 @@ footer{text-align:center;color:#64748b;padding:25px;font-size:12px}
 <body>
 
 <header>
-<div class="brand">
-<div class="logo">PE</div>
-<div>
-<h1>Pramod Electronics</h1>
-<p>Best Price • Trusted Quality • Honest Service</p>
-</div>
-</div>
+  <div class="brand">
+    <div class="logo">PE</div>
+    <div>
+      <h1>Pramod Electronics</h1>
+      <p>Best Price • Trusted Quality • Honest Service</p>
+    </div>
+  </div>
 </header>
 
 <nav>
-<button onclick="showPage('customer')">Customer App</button>
-<button class="secondary" onclick="showPage('owner')">Owner Dashboard</button>
-<button class="secondary" onclick="showPage('qrpage')">QR Generator</button>
+  <button onclick="showPage('customer')">Customer App</button>
+  <button class="secondary" onclick="showPage('owner')">Owner Dashboard</button>
+  <button class="secondary" onclick="showPage('qrpage')">QR Generator</button>
 </nav>
 
 <main>
 <!-- CUSTOMER PAGE -->
 <section id="customer">
-<div class="hero">
-<div style="font-size:45px">🪔 🎁 🪔</div>
-<h2>DIWALI GIFT OFFER</h2>
-<p>Scan QR Code & Watch Our Video<br>Get Your Special Gift!</p>
-</div>
+  <div class="hero">
+    <div style="font-size:45px">🪔 🎁 🪔</div>
+    <h2>DIWALI GIFT OFFER</h2>
+    <p>Scan QR Code & Watch Our Video<br>Get Your Special Gift!</p>
+  </div>
 
-<div class="panel">
-<h2 id="offerTitle">Welcome to Pramod Electronics!</h2>
-<p id="offerMessage">Watch our shop video and get your special Diwali gift.</p>
+  <div class="panel">
+    <h2 id="offerTitle">Welcome to Pramod Electronics!</h2>
+    <p id="offerMessage">Watch our shop video and get your special Diwali gift.</p>
 
-<video id="shopVideo" class="video" controls autoplay muted playsinline>
-Your browser does not support video.
-</video>
-<p class="muted">If the video does not start automatically, press Play. Mobile browsers may require a tap.</p>
+    <video id="shopVideo" class="video" controls autoplay muted playsinline>
+      Your browser does not support video.
+    </video>
+    <p class="muted">If the video does not start automatically, press Play. Mobile browsers may require a tap.</p>
 
-<button class="action" onclick="getGift()">🎁 Get My Gift Code</button>
-<div id="giftResult" class="hidden" style="margin-top:18px">
-<h3 style="text-align:center">Congratulations!</h3>
-<div id="giftCode" class="code"></div>
-<p style="text-align:center">Your assigned gift:</p>
-<h3 id="giftName" style="text-align:center;color:#a34a00"></h3>
-<p class="muted">Save this code and show it at Pramod Electronics. The shop must verify it before giving the gift.</p>
-<button class="action secondary" onclick="copyGift()">Copy Gift Code</button>
-</div>
-</div>
+    <button class="action" onclick="getGift()">🎁 Get My Gift Code</button>
+    <div id="giftResult" class="hidden" style="margin-top:18px">
+      <h3 style="text-align:center">Congratulations!</h3>
+      <div id="giftCode" class="code"></div>
+      <p style="text-align:center">Your assigned gift:</p>
+      <h3 id="giftName" style="text-align:center;color:#a34a00"></h3>
+      <p class="muted">Save this code and show it at Pramod Electronics. The shop must verify it before giving the gift.</p>
+      <button class="action secondary" onclick="copyGift()">Copy Gift Code</button>
+    </div>
+  </div>
 </section>
 
 <!-- OWNER PAGE -->
 <section id="owner" class="hidden">
-<div class="panel">
-<h2>🔐 Owner Dashboard</h2>
-<p class="muted">This is a local demo, not a secure owner login. Do not use it to authorize real gifts.</p>
-<h3>Campaign Settings</h3>
-<label>Offer heading</label>
-<input id="cfgTitle" value="Welcome to Pramod Electronics!">
-<label>Offer message</label>
-<textarea id="cfgMessage" rows="2">Watch our shop video and get your special Diwali gift.</textarea>
-<label>Choose shop video from your computer</label>
-<input type="file" id="videoFile" accept="video/*">
-<p class="muted">This only previews the video in this browser. It does not upload it online.</p>
-<label>Gift list (one gift per line)</label>
-<textarea id="giftList" rows="5">Bluetooth Earphones
+  <div class="panel">
+    <h2>🔐 Owner Dashboard</h2>
+    <p class="muted">This is a local demo, not a secure owner login. Do not use it to authorize real gifts.</p>
+    <h3>Campaign Settings</h3>
+    <label>Offer heading</label>
+    <input id="cfgTitle" value="Welcome to Pramod Electronics!">
+    <label>Offer message</label>
+    <textarea id="cfgMessage" rows="2">Watch our shop video and get your special Diwali gift.</textarea>
+    <label>Choose shop video from your computer</label>
+    <input type="file" id="videoFile" accept="video/*">
+    <p class="muted">This only previews the video in this browser. It does not upload it online.</p>
+    <label>Gift list (one gift per line)</label>
+    <textarea id="giftList" rows="5">Bluetooth Earphones
 Smart Watch
 Shopping Voucher
 Electronics Accessory
 Special Surprise Gift</textarea>
-<button onclick="saveSettings()">Save Demo Settings</button>
-<button class="secondary" onclick="document.getElementById('videoFile').value='';document.getElementById('shopVideo').removeAttribute('src');document.getElementById('shopVideo').load()">Remove Video Preview</button>
-</div>
+    <button onclick="saveSettings()">Save Demo Settings</button>
+    <button class="secondary" onclick="document.getElementById('videoFile').value='';document.getElementById('shopVideo').removeAttribute('src');document.getElementById('shopVideo').load()">Remove Video Preview</button>
+  </div>
 
-<div class="panel">
-<h3>📊 Demo Statistics</h3>
-<div class="stats">
-<div class="stat">Total Gift Codes<strong id="totalCodes">0</strong></div>
-<div class="stat">Redeemed<strong id="usedCodes">0</strong></div>
-</div>
-</div>
+  <div class="panel">
+    <h3>📊 Demo Statistics</h3>
+    <div class="stats">
+      <div class="stat">Total Gift Codes<strong id="totalCodes">0</strong></div>
+      <div class="stat">Redeemed<strong id="usedCodes">0</strong></div>
+    </div>
+  </div>
 
-<div class="panel">
-<h3>Verify / Redeem Gift Code</h3>
-<label>Enter customer's code</label>
-<input id="verifyInput" placeholder="Example: PE-GIFT-ABC123">
-<div class="row">
-<button onclick="verifyCode()">Verify Code</button>
-<button class="gold" onclick="redeemCode()">Redeem Gift</button>
-</div>
-<div id="verifyResult" style="margin-top:12px"></div>
-</div>
+  <div class="panel">
+    <h3>Verify / Redeem Gift Code</h3>
+    <label>Enter customer's code</label>
+    <input id="verifyInput" placeholder="Example: PE-GIFT-ABC123">
+    <div class="row">
+      <button onclick="verifyCode()">Verify Code</button>
+      <button class="gold" onclick="redeemCode()">Redeem Gift</button>
+    </div>
+    <div id="verifyResult" style="margin-top:12px"></div>
+  </div>
 
-<div class="panel">
-<h3>All Demo Gift Codes</h3>
-<div id="codeList"></div>
-<div class="row">
-<button class="secondary" onclick="exportCSV()">Export CSV</button>
-<button class="danger" onclick="clearDemo()">Clear Demo Data</button>
-</div>
-</div>
+  <div class="panel">
+    <h3>All Demo Gift Codes</h3>
+    <div id="codeList"></div>
+    <div class="row">
+      <button class="secondary" onclick="exportCSV()">Export CSV</button>
+      <button class="danger" onclick="clearDemo()">Clear Demo Data</button>
+    </div>
+  </div>
 </section>
 
 <!-- QR PAGE -->
 <section id="qrpage" class="hidden">
-<div class="panel">
-<h2>📱 QR Code Generator</h2>
-<p>First publish your website online using an HTTPS address, then enter its URL here.</p>
-<label>Public website URL</label>
-<input id="siteURL" placeholder="https://yourwebsite.com/gift">
-<button onclick="makeQR()">Generate QR Code</button>
-<div id="qr" style="text-align:center"></div>
-<p class="muted">A QR made from a local file path will not work for other customers. QR generation requires an internet connection to load the QR library.</p>
-<button class="secondary" onclick="window.print()">Print Page</button>
-</div>
+  <div class="panel">
+    <h2>📱 QR Code Generator</h2>
+    <p>First publish your website online using an HTTPS address, then enter its URL here.</p>
+    <label>Public website URL</label>
+    <input id="siteURL" placeholder="https://yourwebsite.com/gift">
+    <button onclick="makeQR()">Generate QR Code</button>
+    <div id="qr" style="text-align:center"></div>
+    <p class="muted">A QR made from a local file path will not work for other customers. QR generation requires an internet connection to load the QR library.</p>
+    <button class="secondary" onclick="window.print()">Print Page</button>
+  </div>
 </section>
 </main>
 
@@ -164,154 +164,154 @@ let records = {};
 let currentCode = "";
 let currentGift = "";
 let giftOptions = [
-"Bluetooth Earphones",
-"Smart Watch",
-"Shopping Voucher",
-"Electronics Accessory",
-"Special Surprise Gift"
+  "Bluetooth Earphones",
+  "Smart Watch",
+  "Shopping Voucher",
+  "Electronics Accessory",
+  "Special Surprise Gift"
 ];
 
 function readRecords(){
-try { records = JSON.parse(localStorage.getItem(STORAGE_KEY) || "{}"); }
-catch(e){ records = {}; }
+  try { records = JSON.parse(localStorage.getItem(STORAGE_KEY) || "{}"); }
+  catch(e){ records = {}; }
 }
 function saveRecords(){
-localStorage.setItem(STORAGE_KEY, JSON.stringify(records));
-renderRecords();
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(records));
+  renderRecords();
 }
 function showPage(page){
-["customer","owner","qrpage"].forEach(id=>{
-document.getElementById(id).classList.toggle("hidden",id!page);
-});
-if(page="owner") renderRecords();
+  ["customer","owner","qrpage"].forEach(id=>{
+    document.getElementById(id).classList.toggle("hidden",id!==page);
+  });
+  if(page==="owner") renderRecords();
 }
 function saveSettings(){
-const title=document.getElementById("cfgTitle").value.trim();
-const message=document.getElementById("cfgMessage").value.trim();
-const list=document.getElementById("giftList").value.split("\n").map(x=>x.trim()).filter(Boolean);
-if(!list.length){alert("Please enter at least one gift.");return;}
-giftOptions=list;
-document.getElementById("offerTitle").textContent=title || "Pramod Electronics";
-document.getElementById("offerMessage").textContent=message;
-alert("Demo settings updated in this page.");
+  const title=document.getElementById("cfgTitle").value.trim();
+  const message=document.getElementById("cfgMessage").value.trim();
+  const list=document.getElementById("giftList").value.split("\n").map(x=>x.trim()).filter(Boolean);
+  if(!list.length){alert("Please enter at least one gift.");return;}
+  giftOptions=list;
+  document.getElementById("offerTitle").textContent=title || "Pramod Electronics";
+  document.getElementById("offerMessage").textContent=message;
+  alert("Demo settings updated in this page.");
 }
 document.getElementById("videoFile").addEventListener("change",function(){
-const file=this.files && this.files[0];
-if(!file)return;
-const video=document.getElementById("shopVideo");
-if(video.dataset.objectUrl) URL.revokeObjectURL(video.dataset.objectUrl);
-const url=URL.createObjectURL(file);
-video.dataset.objectUrl=url;
-video.src=url;
-video.muted=true;
-video.play().catch(()=>{});
+  const file=this.files && this.files[0];
+  if(!file)return;
+  const video=document.getElementById("shopVideo");
+  if(video.dataset.objectUrl) URL.revokeObjectURL(video.dataset.objectUrl);
+  const url=URL.createObjectURL(file);
+  video.dataset.objectUrl=url;
+  video.src=url;
+  video.muted=true;
+  video.play().catch(()=>{});
 });
 function getGift(){
-if(!giftOptions.length) giftOptions=["Surprise Gift"];
-// DEMO ONLY: browser-generated code, not secure or globally unique.
-let code;
-do {
-code="PE-GIFT-"+Math.random().toString(36).slice(2,8).toUpperCase();
-} while(records[code]);
-const gift=giftOptions[Math.floor(Math.random()*giftOptions.length)];
-records[code]={
-code:code,
-gift:gift,
-issued:new Date().toLocaleString(),
-redeemed:false,
-redeemedAt:""
-};
-currentCode=code;
-currentGift=gift;
-saveRecords();
-document.getElementById("giftCode").textContent=code;
-document.getElementById("giftName").textContent=gift;
-document.getElementById("giftResult").classList.remove("hidden");
+  if(!giftOptions.length) giftOptions=["Surprise Gift"];
+  // DEMO ONLY: browser-generated code, not secure or globally unique.
+  let code;
+  do {
+    code="PE-GIFT-"+Math.random().toString(36).slice(2,8).toUpperCase();
+  } while(records[code]);
+  const gift=giftOptions[Math.floor(Math.random()*giftOptions.length)];
+  records[code]={
+    code:code,
+    gift:gift,
+    issued:new Date().toLocaleString(),
+    redeemed:false,
+    redeemedAt:""
+  };
+  currentCode=code;
+  currentGift=gift;
+  saveRecords();
+  document.getElementById("giftCode").textContent=code;
+  document.getElementById("giftName").textContent=gift;
+  document.getElementById("giftResult").classList.remove("hidden");
 }
 function copyGift(){
-if(!currentCode)return;
-if(navigator.clipboard && navigator.clipboard.writeText){
-navigator.clipboard.writeText(currentCode).then(()=>alert("Code copied!")).catch(()=>prompt("Copy this code:",currentCode));
-} else prompt("Copy this code:",currentCode);
+  if(!currentCode)return;
+  if(navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(currentCode).then(()=>alert("Code copied!")).catch(()=>prompt("Copy this code:",currentCode));
+  } else prompt("Copy this code:",currentCode);
 }
 function verifyCode(){
-const code=document.getElementById("verifyInput").value.trim().toUpperCase();
-const rec=records[code];
-const box=document.getElementById("verifyResult");
-if(!rec){box.innerHTML="<p style='color:#c21f35'>Code not found in this browser's demo register.</p>";return;}
-box.textContent="";
-const title=document.createElement("h3");
-title.textContent=rec.redeemed?"Already redeemed":"Valid demo code";
-title.style.color=rec.redeemed?"#c21f35":"#087443";
-const details=document.createElement("p");
-details.textContent="Gift: "+rec.gift+" | Issued: "+rec.issued+(rec.redeemed?" | Redeemed: "+rec.redeemedAt:"");
-box.append(title,details);
+  const code=document.getElementById("verifyInput").value.trim().toUpperCase();
+  const rec=records[code];
+  const box=document.getElementById("verifyResult");
+  if(!rec){box.innerHTML="<p style='color:#c21f35'>Code not found in this browser's demo register.</p>";return;}
+  box.textContent="";
+  const title=document.createElement("h3");
+  title.textContent=rec.redeemed?"Already redeemed":"Valid demo code";
+  title.style.color=rec.redeemed?"#c21f35":"#087443";
+  const details=document.createElement("p");
+  details.textContent="Gift: "+rec.gift+" | Issued: "+rec.issued+(rec.redeemed?" | Redeemed: "+rec.redeemedAt:"");
+  box.append(title,details);
 }
 function redeemCode(){
-const code=document.getElementById("verifyInput").value.trim().toUpperCase();
-const rec=records[code];
-const box=document.getElementById("verifyResult");
-if(!rec){box.textContent="Code not found.";return;}
-if(rec.redeemed){box.textContent="This demo code has already been redeemed.";return;}
-rec.redeemed=true;
-rec.redeemedAt=new Date().toLocaleString();
-saveRecords();
-box.textContent="Demo code marked redeemed. Gift: "+rec.gift;
+  const code=document.getElementById("verifyInput").value.trim().toUpperCase();
+  const rec=records[code];
+  const box=document.getElementById("verifyResult");
+  if(!rec){box.textContent="Code not found.";return;}
+  if(rec.redeemed){box.textContent="This demo code has already been redeemed.";return;}
+  rec.redeemed=true;
+  rec.redeemedAt=new Date().toLocaleString();
+  saveRecords();
+  box.textContent="Demo code marked redeemed. Gift: "+rec.gift;
 }
 function renderRecords(){
-const list=document.getElementById("codeList");
-if(!list)return;
-list.textContent="";
-const items=Object.values(records).reverse();
-document.getElementById("totalCodes").textContent=items.length;
-document.getElementById("usedCodes").textContent=items.filter(x=>x.redeemed).length;
-if(!items.length){list.textContent="No demo codes yet.";return;}
-items.forEach(rec=>{
-const div=document.createElement("div");
-div.className="item";
-const strong=document.createElement("strong");
-strong.textContent=rec.code+" — "+rec.gift;
-const info=document.createElement("div");
-info.className="muted";
-info.textContent="Issued: "+rec.issued+" • "+(rec.redeemed?"Redeemed":"Not redeemed");
-div.append(strong,info);
-list.append(div);
-});
+  const list=document.getElementById("codeList");
+  if(!list)return;
+  list.textContent="";
+  const items=Object.values(records).reverse();
+  document.getElementById("totalCodes").textContent=items.length;
+  document.getElementById("usedCodes").textContent=items.filter(x=>x.redeemed).length;
+  if(!items.length){list.textContent="No demo codes yet.";return;}
+  items.forEach(rec=>{
+    const div=document.createElement("div");
+    div.className="item";
+    const strong=document.createElement("strong");
+    strong.textContent=rec.code+" — "+rec.gift;
+    const info=document.createElement("div");
+    info.className="muted";
+    info.textContent="Issued: "+rec.issued+" • "+(rec.redeemed?"Redeemed":"Not redeemed");
+    div.append(strong,info);
+    list.append(div);
+  });
 }
 function exportCSV(){
-const rows=[["Code","Gift","Issued","Redeemed","Redeemed At"]];
-Object.values(records).forEach(r=>rows.push([r.code,r.gift,r.issued,r.redeemed?"Yes":"No",r.redeemedAt]));
-const csv=rows.map(row=>row.map(v=>'"'+String(v||"").replace(/"/g,'""')+'"').join(",")).join("\r\n");
-const blob=new Blob([csv],{type:"text/csv;charset=utf-8;"});
-const a=document.createElement("a");
-a.href=URL.createObjectURL(blob);
-a.download="pramod-demo-gift-codes.csv";
-a.click();
-URL.revokeObjectURL(a.href);
+  const rows=[["Code","Gift","Issued","Redeemed","Redeemed At"]];
+  Object.values(records).forEach(r=>rows.push([r.code,r.gift,r.issued,r.redeemed?"Yes":"No",r.redeemedAt]));
+  const csv=rows.map(row=>row.map(v=>'"'+String(v||"").replace(/"/g,'""')+'"').join(",")).join("\r\n");
+  const blob=new Blob([csv],{type:"text/csv;charset=utf-8;"});
+  const a=document.createElement("a");
+  a.href=URL.createObjectURL(blob);
+  a.download="pramod-demo-gift-codes.csv";
+  a.click();
+  URL.revokeObjectURL(a.href);
 }
 function clearDemo(){
-if(!confirm("Clear all demo gift codes from this browser?"))return;
-records={};
-saveRecords();
-document.getElementById("verifyResult").textContent="";
+  if(!confirm("Clear all demo gift codes from this browser?"))return;
+  records={};
+  saveRecords();
+  document.getElementById("verifyResult").textContent="";
 }
 function makeQR(){
-const url=document.getElementById("siteURL").value.trim();
-const out=document.getElementById("qr");
-out.textContent="";
-if(!/^https:///i.test(url)){
-out.textContent="Please enter a public HTTPS website URL.";
-return;
-}
-if(!window.QRCode){
-out.textContent="QR library is loading or blocked. Connect to the internet and reload the page.";
-const s=document.createElement("script");
-s.src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js";
-s.onload=()=>{out.textContent="";new QRCode(out,{text:url,width:220,height:220});};
-document.head.appendChild(s);
-return;
-}
-new QRCode(out,{text:url,width:220,height:220});
+  const url=document.getElementById("siteURL").value.trim();
+  const out=document.getElementById("qr");
+  out.textContent="";
+  if(!/^https:\/\//i.test(url)){
+    out.textContent="Please enter a public HTTPS website URL.";
+    return;
+  }
+  if(!window.QRCode){
+    out.textContent="QR library is loading or blocked. Connect to the internet and reload the page.";
+    const s=document.createElement("script");
+    s.src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js";
+    s.onload=()=>{out.textContent="";new QRCode(out,{text:url,width:220,height:220});};
+    document.head.appendChild(s);
+    return;
+  }
+  new QRCode(out,{text:url,width:220,height:220});
 }
 readRecords();
 renderRecords();
